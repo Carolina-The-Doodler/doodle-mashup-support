@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doodle Mashup UI References</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .screenshot-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .screenshot-card:hover {
+            transform: translateY(-2px);
+        }
+        .screenshot-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .screenshot-card h3 {
+            padding: 15px;
+            margin: 0;
+            background: #1CADFA;
+            color: white;
+            font-size: 18px;
+        }
+        .promo-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .promo-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .promo-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .promo-card h4 {
+            padding: 10px;
+            margin: 0;
+            background: #E42792;
+            color: white;
+            font-size: 14px;
+        }
+        .instructions {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .instructions h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        .instructions ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Doodle Mashup UI Design References</h1>
+
+        <div class="instructions">
+            <h2>📱 App Screen Screenshots</h2>
+            <p>These are the reference designs for the iOS app UI. Use these to update the SwiftUI components:</p>
+            <ul>
+                <li><strong>app-screen-1.png</strong>: Mode picker screen design</li>
+                <li><strong>app-screen-2.png</strong>: Game/drawing screen layout</li>
+                <li><strong>app-screen-3.png</strong>: Color palette and tools interface</li>
+                <li><strong>app-screen-4.png</strong>: Additional UI states or screens</li>
+            </ul>
+        </div>
+
+        <div class="screenshot-grid">
+            <div class="screenshot-card">
+                <h3>Screen 1 - Mode Picker</h3>
+                <img src="../images/app-screen-1.png" alt="App Screen 1 - Mode Picker Design" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+                <h3>Screen 2 - Game View</h3>
+                <img src="../images/app-screen-2.png" alt="App Screen 2 - Game View Design" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+                <h3>Screen 3 - Tools & Colors</h3>
+                <img src="../images/app-screen-3.png" alt="App Screen 3 - Tools and Colors Design" loading="lazy">
+            </div>
+            <div class="screenshot-card">
+                <h3>Screen 4 - Additional UI</h3>
+                <img src="../images/app-screen-4.png" alt="App Screen 4 - Additional UI Design" loading="lazy">
+            </div>
+        </div>
+
+        <h2>🎨 Promotional Assets</h2>
+        <div class="promo-images">
+            <div class="promo-card">
+                <h4>App Cover</h4>
+                <img src="../images/CTD-APP-COVER.png" alt="App Cover Image" loading="lazy">
+            </div>
+            <div class="promo-card">
+                <h4>Promo Image 1</h4>
+                <img src="../images/CTD-APP-PROMO1.png" alt="Promotional Image 1" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add error handling for missing images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('error', function() {
+                    this.style.display = 'none';
+                    const card = this.closest('.screenshot-card, .promo-card');
+                    if (card) {
+                        const title = card.querySelector('h3, h4');
+                        if (title) {
+                            title.textContent += ' (Image not found)';
+                            title.style.background = '#ff6b6b';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
