@@ -62,10 +62,10 @@ export default defineConfig({
     // },
   ],
 
-  /* Run your local dev server before starting the tests */
-  webServer: process.env.CI ? undefined : {
-    command: 'python3 -m http.server 3000',
-    port: 3000,
-    reuseExistingServer: !process.env.CI,
-  },
+   /* Run your local dev server before starting the tests */
+   webServer: process.env.CI ? undefined : {
+     command: 'cd .. && python3 -m http.server 3000',
+     port: 3000,
+     reuseExistingServer: !process.env.CI,
+   },
 });
